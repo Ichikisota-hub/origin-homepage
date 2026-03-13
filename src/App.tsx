@@ -1,33 +1,23 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Problem from './components/Problem';
 import Concept from './components/Concept';
-import Process from './components/Process';
 import Fields from './components/Fields';
 import Values from './components/Values';
-import CareerPaths from './components/CareerPaths';
-import Stories from './components/Stories';
-import Culture from './components/Culture';
-import Requirements from './components/Requirements';
+import Company from './components/Company';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import SchedulingModal from './components/SchedulingModal';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-red-100 selection:text-red-900">
+    <div className="min-h-screen bg-black text-white font-sans selection:bg-white/20 selection:text-white">
       <Navbar />
       <main>
         <Hero />
-        <Problem />
         <Concept />
-        <Process />
         <Fields />
         <Values />
-        <CareerPaths />
-        <Stories />
-        <Culture />
-        <Requirements />
+        <Company />
         <CTA />
       </main>
       <Footer />

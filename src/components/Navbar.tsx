@@ -14,47 +14,45 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3 md:py-4' : 'bg-white py-4 md:py-6'}`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-black/80 backdrop-blur-md border-b border-white/10 py-3 md:py-4' : 'bg-transparent py-4 md:py-6'}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <span className="font-black text-2xl md:text-3xl tracking-tighter text-slate-900">ORIGIN</span>
+            <span className="font-black text-xl md:text-2xl tracking-tighter text-white">ORIGIN</span>
           </div>
           <div className="hidden md:flex items-center space-x-10">
-            <a href="#problem" className="text-sm font-bold text-slate-900 hover:text-orange-600 transition-colors">課題</a>
-            <a href="#concept" className="text-sm font-bold text-slate-900 hover:text-orange-600 transition-colors">ORIGINとは</a>
-            <a href="#process" className="text-sm font-bold text-slate-900 hover:text-orange-600 transition-colors">成長ステップ</a>
-            <a href="#paths" className="text-sm font-bold text-slate-900 hover:text-orange-600 transition-colors">進路</a>
+            <a href="#concept" className="text-xs font-bold tracking-widest text-zinc-300 hover:text-white transition-colors">VISION</a>
+            <a href="#services" className="text-xs font-bold tracking-widest text-zinc-300 hover:text-white transition-colors">SERVICES</a>
+            <a href="#company" className="text-xs font-bold tracking-widest text-zinc-300 hover:text-white transition-colors">COMPANY</a>
             <button 
               onClick={() => window.dispatchEvent(new CustomEvent('open-scheduling-modal'))}
-              className="bg-slate-900 text-white px-8 py-3 text-sm font-bold rounded-full hover:bg-orange-600 transition-colors"
+              className="bg-white text-black px-6 py-2.5 text-xs font-bold rounded-full hover:bg-zinc-200 transition-colors tracking-widest"
             >
-              説明会に参加する
+              CONTACT
             </button>
           </div>
           <div className="md:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-slate-900 p-2">
-              {isOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
+            <button onClick={() => setIsOpen(!isOpen)} className="text-white p-2">
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
       </div>
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-white absolute w-full h-screen pt-4 border-t border-slate-100">
+        <div className="md:hidden bg-zinc-950 absolute w-full h-screen pt-4 border-t border-white/10">
           <div className="flex flex-col px-6 space-y-6 text-center">
-            <a href="#problem" onClick={() => setIsOpen(false)} className="block text-2xl font-black text-slate-900 py-2">課題</a>
-            <a href="#concept" onClick={() => setIsOpen(false)} className="block text-2xl font-black text-slate-900 py-2">ORIGINとは</a>
-            <a href="#process" onClick={() => setIsOpen(false)} className="block text-2xl font-black text-slate-900 py-2">成長ステップ</a>
-            <a href="#paths" onClick={() => setIsOpen(false)} className="block text-2xl font-black text-slate-900 py-2">進路</a>
+            <a href="#concept" onClick={() => setIsOpen(false)} className="block text-xl font-black text-white py-2 tracking-widest">VISION</a>
+            <a href="#services" onClick={() => setIsOpen(false)} className="block text-xl font-black text-white py-2 tracking-widest">SERVICES</a>
+            <a href="#company" onClick={() => setIsOpen(false)} className="block text-xl font-black text-white py-2 tracking-widest">COMPANY</a>
             <button 
               onClick={() => {
                 setIsOpen(false);
                 window.dispatchEvent(new CustomEvent('open-scheduling-modal'));
               }}
-              className="w-full mt-8 bg-orange-600 text-white px-6 py-4 font-bold text-lg rounded-full"
+              className="w-full mt-8 bg-white text-black px-6 py-4 font-bold text-sm tracking-widest rounded-full"
             >
-              説明会に参加する
+              CONTACT
             </button>
           </div>
         </div>
