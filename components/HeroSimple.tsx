@@ -49,7 +49,7 @@ export default function HeroSimple() {
       <div className="absolute top-0 inset-x-0 gold-line z-20" />
 
       {/* ── メインコンテンツ ── */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center s-container pt-28 pb-16">
+      <div className="relative z-10 flex-1 flex flex-col justify-center hero-container pt-28 pb-16">
 
         {/* タグライン */}
         <m.div
