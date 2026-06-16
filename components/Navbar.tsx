@@ -27,7 +27,7 @@ export default function Navbar() {
       isScrolled
         ? 'bg-[#fafaf8]/94 backdrop-blur-xl border-b border-black/7 py-2 shadow-sm'
         : 'bg-transparent py-4'
-    }`}>
+    }`} data-scrolled={isScrolled ? 'true' : 'false'}>
       <div className="s-container">
         <div className="flex justify-between items-center">
 
@@ -44,13 +44,15 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map(({ href, label }) => (
               <a key={label} href={href}
-                className="t-label text-[#777] hover:text-[#111] transition-colors relative group"
+                className={`t-label transition-colors relative group ${isScrolled ? 'text-[#777] hover:text-[#111]' : 'nav-link-dark'}`}
                 style={{ fontSize: '11px' }}>
                 {label}
                 <span className="absolute -bottom-0.5 left-0 w-0 h-[1.5px] bg-[#c8a84b] group-hover:w-full transition-all duration-300" />
               </a>
             ))}
-            <a href="/login" className="t-label text-[#aaa] hover:text-[#555] transition-colors" style={{ fontSize: '11px' }}>
+            <a href="/login"
+              className={`t-label transition-colors ${isScrolled ? 'text-[#aaa] hover:text-[#555]' : 'nav-login-dark'}`}
+              style={{ fontSize: '11px' }}>
               ログイン
             </a>
             {/* Sticky CTA（常時表示） */}
@@ -63,7 +65,7 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-[#333] p-2 rounded-lg hover:bg-black/5 transition-colors">
+            className={`md:hidden p-2 rounded-lg transition-colors ${isScrolled ? 'text-[#333] hover:bg-black/5' : 'text-[#888] hover:bg-white/5'}`}>
             <AnimatePresence mode="wait" initial={false}>
               {isOpen
                 ? <m.div key="x"    initial={{rotate:-90,opacity:0}} animate={{rotate:0,opacity:1}} exit={{rotate:90,opacity:0}} transition={{duration:0.15}}><X className="h-6 w-6" /></m.div>

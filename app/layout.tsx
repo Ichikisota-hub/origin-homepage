@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Onest } from "next/font/google";
 import Providers from "./providers";
 import "./globals.css";
 
-/* Space Grotesk: モダン・権威感 (英語見出し専用) */
-const spaceGrotesk = Space_Grotesk({
+/* Onest: 幾何学的・クリーン。数字・英語ラベル専用 */
+const onest = Onest({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
+/* Shippori Mincho B1: CJKフォントはTurbopack非対応のためCDN経由（globals.cssに@import） */
 
 export const metadata: Metadata = {
   title: "Kaika | 稼ぎながら成長する実践型学生ビジネス組織 | 大阪",
@@ -29,7 +30,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ja" className={spaceGrotesk.variable}>
+    <html lang="ja" className={onest.variable}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="min-h-screen bg-[#fafaf8] text-[#111] antialiased selection:bg-amber-100 selection:text-amber-900">
         <Providers>{children}</Providers>
       </body>

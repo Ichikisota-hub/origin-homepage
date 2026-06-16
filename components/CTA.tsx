@@ -22,16 +22,22 @@ export default function CTA() {
         <m.div initial={{opacity:0,y:48}} whileInView={{opacity:1,y:0}} viewport={{once:true}}
           transition={{duration:0.9,ease:[0.16,1,0.3,1]}}>
 
-          <span className="t-label text-[#c8a84b] block mb-10">NOW OR NEVER</span>
+          {/* NOW OR NEVER: Onest極太ラベル */}
+          <span className="font-display block mb-8"
+            style={{ fontSize: '11px', fontWeight: 800, letterSpacing: '0.35em', color: '#c8a84b' }}>
+            NOW OR NEVER
+          </span>
 
-          {/* Display heading */}
-          <h2 className="t-hero gold-text font-display mb-8">KAIKA</h2>
+          {/* KAIKA: Onest×ゴールド */}
+          <h2 className="t-hero gold-text font-display mb-10" style={{ lineHeight: 0.88, letterSpacing: '-0.04em' }}>
+            KAIKA
+          </h2>
 
-          {/* 変容コピー: ユーザーの未来像 */}
-          <p className="t-h2 text-white/88 mb-5">
+          {/* 日本語コピー: 明朝体×白 */}
+          <p className="font-mincho mb-6" style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', fontWeight: 700, color: 'rgba(255,255,255,0.92)', lineHeight: 1.4, letterSpacing: '0.04em' }}>
             今、動くか。<br />一生同じままか。
           </p>
-          <p className="t-body text-white/40 mb-14 max-w-[380px] mx-auto">
+          <p className="font-mincho mb-14 mx-auto" style={{ fontSize: '17px', color: 'rgba(255,255,255,0.38)', lineHeight: 2.0, letterSpacing: '0.06em', maxWidth: '360px' }}>
             3秒あれば、人生は動き出す。<br />
             話を聞くだけでOK。まず一歩。
           </p>

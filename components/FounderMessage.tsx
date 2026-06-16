@@ -32,33 +32,41 @@ export default function FounderMessage() {
       </div>
 
       <div className="relative z-10 s-container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
-          {/* LEFT: テキスト */}
+        {/* ── 引用: 全幅・ページの主役 ── */}
+        <m.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-16"
+        >
+          <span className="t-label text-[#c8a84b] block mb-10">A MESSAGE FROM FOUNDER</span>
+          <blockquote>
+            <p
+              className="font-mincho text-[#111]"
+              style={{ fontSize: 'clamp(2.4rem, 5.5vw, 5rem)', fontWeight: 700, lineHeight: 1.3, letterSpacing: '0.02em' }}
+            >
+              {founder.quote}
+            </p>
+          </blockquote>
+          <span className="block w-20 gold-line mt-12" />
+        </m.div>
+
+        {/* ── 下段: メッセージ(左) + 写真(右) ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+
+          {/* LEFT: 本文 + 署名 */}
           <m.div
             initial={{ opacity: 0, x: -32 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* ラベル（コントラスト比: #c8a84b on #fafaf8 = 2.6:1 → 装飾用） */}
-            <span className="t-label text-[#c8a84b] block mb-8">A MESSAGE FROM FOUNDER</span>
-
-            {/* 大見出し引用: #111 on #fafaf8 = 19:1（最高コントラスト） */}
-            <blockquote className="mb-10">
-              <p
-                className="font-display font-bold text-[#111] leading-[1.1] tracking-[-0.02em] mb-6"
-                style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.6rem)' }}
-              >
-                {founder.quote}
-              </p>
-              <span className="block w-12 gold-line mb-8" />
-            </blockquote>
-
-            {/* 本文: #444 on #fafaf8 = 8.6:1（AA十分・読みやすい） */}
+            {/* 本文: 明朝体で格調高く */}
             <div className="space-y-5 mb-10">
               {founder.message.split('\n\n').map((para, i) => (
-                <p key={i} className="t-body leading-[1.9]" style={{ color: '#444' }}>
+                <p key={i} className="font-mincho leading-[2.0]" style={{ color: '#555', fontSize: '17px', letterSpacing: '0.04em' }}>
                   {para.split('\n').map((line, j) => (
                     <span key={j}>{line}{j < para.split('\n').length - 1 && <br />}</span>
                   ))}
@@ -66,12 +74,12 @@ export default function FounderMessage() {
               ))}
             </div>
 
-            {/* 署名: #111 + #888（AA準拠） */}
+            {/* 署名: 明朝体×太字 */}
             <div className="flex items-center gap-4">
               <span className="block w-8 h-[1.5px] bg-[#c8a84b]" />
               <div>
-                <p className="font-display font-bold text-[#111] text-lg tracking-tight">{founder.name}</p>
-                <p className="t-label mt-1" style={{ fontSize: '10px', color: '#888' }}>{founder.role}</p>
+                <p className="font-mincho text-[#111]" style={{ fontSize: '1.15rem', fontWeight: 700, letterSpacing: '0.05em' }}>{founder.name}</p>
+                <p className="font-display mt-1" style={{ fontSize: '10px', color: '#999', letterSpacing: '0.2em', textTransform: 'uppercase' }}>{founder.role}</p>
               </div>
             </div>
           </m.div>

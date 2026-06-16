@@ -1,4 +1,5 @@
 @import "tailwindcss";
+/* Shippori Mincho B1 は layout.tsx の <link> で読み込み済み */
 
 /* ════════════════════════════════════════════════
    KAIKA DESIGN SYSTEM
@@ -7,24 +8,29 @@
 ════════════════════════════════════════════════ */
 
 /* ── Base ─────────────────────────────────── */
-html { scroll-behavior: smooth; }
+html { scroll-behavior: auto; }
 
 body {
-  /* Japanese priority, Space Grotesk fallback for Latin */
+  /* Japanese: Hiragino → Noto Sans JP。Latin: Onest */
   font-family:
     "Hiragino Kaku Gothic ProN", "Hiragino Sans",
     "Yu Gothic Medium", "Noto Sans JP", "Meiryo",
-    var(--font-display, "Inter"), sans-serif;
+    var(--font-display, "Onest", "Inter"), sans-serif;
   background: #fafaf8;
   color: #111;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Space Grotesk for Latin/English display only */
+/* Onest: 数字・英語ラベル・UI要素 */
 .font-display,
 [data-latin] {
-  font-family: var(--font-display, "Inter"), sans-serif;
+  font-family: var(--font-display, "Onest", "Inter"), sans-serif;
+}
+
+/* Shippori Mincho B1: 日本語見出し専用 */
+.font-mincho {
+  font-family: var(--font-mincho, "Shippori Mincho B1", "游明朝", "YuMincho", "Hiragino Mincho ProN", serif);
 }
 
 /* ── Scrollbar (gold accent) ───────────────── */
@@ -209,9 +215,48 @@ body {
 ════════════════════════════════════════════ */
 .proof-num {
   font-family: var(--font-display, sans-serif);
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  font-weight: 700;
-  letter-spacing: -0.04em;
+  font-size: clamp(2.8rem, 6vw, 4.4rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
   line-height: 1;
   color: #fff;
 }
+
+/* ════════════════════════════════════════════
+   HERO DARK — ダーク背景用ユーティリティ
+════════════════════════════════════════════ */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* ダーク背景上のゴーストボタン */
+.cta-ghost-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 56px;
+  padding: 0 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1.5px solid rgba(255,255,255,0.1);
+  color: #888;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+.cta-ghost-dark:hover {
+  border-color: rgba(200,168,75,0.5);
+  color: #c8a84b;
+}
+
+/* ナビバー：ダーク背景上（透明状態） */
+.nav-link-dark { color: #777; transition: color 0.2s; }
+.nav-link-dark:hover { color: #fff; }
+.nav-login-dark { color: #555; transition: color 0.2s; }
+.nav-login-dark:hover { color: #999; }
