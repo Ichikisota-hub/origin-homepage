@@ -71,9 +71,10 @@ export default function HeroSimple() {
             animate={{ y: '0%' }}
             transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             className="t-hero font-mincho"
-            style={{ color: '#fff', lineHeight: 1.15, fontWeight: 700 }}
+            style={{ color: '#fff', lineHeight: 1.2, fontWeight: 700 }}
           >
-            可能性を<span className="gold-text font-display" style={{ fontStyle: 'italic', letterSpacing: '-0.02em' }}>kaika</span>させる、<br className="hidden sm:block" />
+            可能性を<br />
+            <span className="gold-text font-display" style={{ fontStyle: 'italic', letterSpacing: '-0.02em' }}>kaika</span>させる、<br />
             場所とキッカケを。
           </m.h1>
         </div>
