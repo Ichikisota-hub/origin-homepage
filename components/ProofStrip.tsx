@@ -65,13 +65,13 @@ export default function ProofStrip() {
                 <div className="mb-3">
                   <span
                     className="font-display text-[#111]"
-                    style={{ fontSize: 'clamp(2.2rem,4.5vw,3.4rem)', fontWeight: 900, letterSpacing: '-0.05em', lineHeight: 1 }}
+                    style={{ fontSize: 'clamp(1.4rem,4.5vw,3.4rem)', fontWeight: 900, letterSpacing: '-0.05em', lineHeight: 1 }}
                   >
                     {p.num}
                   </span>
                   <span
                     className="font-display text-[#c8a84b] ml-1.5"
-                    style={{ fontSize: 'clamp(0.85rem,1.8vw,1.1rem)', fontWeight: 700, letterSpacing: '-0.01em' }}
+                    style={{ fontSize: 'clamp(0.75rem,1.8vw,1.1rem)', fontWeight: 700, letterSpacing: '-0.01em' }}
                   >
                     {p.unit}
                   </span>
@@ -81,7 +81,7 @@ export default function ProofStrip() {
                 <div className="mb-3">
                   <span
                     className="font-mincho text-[#111]"
-                    style={{ fontSize: 'clamp(1.6rem,3.5vw,2.6rem)', fontWeight: 700, letterSpacing: '0.04em', lineHeight: 1.1 }}
+                    style={{ fontSize: 'clamp(1.2rem,3.5vw,2.6rem)', fontWeight: 700, letterSpacing: '0.04em', lineHeight: 1.1 }}
                   >
                     未経験
                   </span>

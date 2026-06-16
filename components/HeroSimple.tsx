@@ -84,9 +84,9 @@ export default function HeroSimple() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.85 }}
           className="font-mincho"
-          style={{ color: '#666', fontSize: '18px', lineHeight: 1.9, maxWidth: '420px', marginBottom: '3rem', letterSpacing: '0.02em' }}
+          style={{ color: '#666', fontSize: 'clamp(14px,4vw,17px)', lineHeight: 1.9, maxWidth: '420px', marginBottom: '2.5rem', letterSpacing: '0.02em' }}
         >
-          バイトでもインターンでもない、第三の選択肢。<br />
+          バイトでもインターンでもない、第三の選択肢。<br className="hidden sm:block" />
           大阪発の学生組織が、あなたの可能性を広げる。
         </m.p>
 

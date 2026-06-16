@@ -79,13 +79,13 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
           <h1
             className="font-mincho text-white"
-            style={{ fontSize: 'clamp(2.2rem,5vw,4rem)', fontWeight: 700, letterSpacing: '0.02em', lineHeight: 1.2 }}
+            style={{ fontSize: 'clamp(1.4rem,5vw,4rem)', fontWeight: 700, letterSpacing: '0.02em', lineHeight: 1.2 }}
           >
             {service.name}
           </h1>
           <p
             className="font-mincho mt-4"
-            style={{ fontSize: '17px', color: '#555', letterSpacing: '0.04em', lineHeight: 1.8, maxWidth: '560px' }}
+            style={{ fontSize: 'clamp(14px,4vw,17px)', color: '#555', letterSpacing: '0.04em', lineHeight: 1.8, maxWidth: '560px' }}
           >
             {service.catchcopy}
           </p>

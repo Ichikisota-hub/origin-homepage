@@ -46,7 +46,7 @@ export default function SalaryTab() {
       {/* ヘッダー */}
       <m.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-14">
         <span className="block t-label text-[#c8a84b] mb-4">SALARY</span>
-        <h2 className="font-mincho text-[#111]" style={{ fontSize: 'clamp(2.2rem,5vw,3.6rem)', fontWeight: 700, letterSpacing: '0.02em', lineHeight: 1.2 }}>
+        <h2 className="font-mincho text-[#111]" style={{ fontSize: 'clamp(1.4rem,5vw,3.6rem)', fontWeight: 700, letterSpacing: '0.02em', lineHeight: 1.2 }}>
           選べる報酬制度。
         </h2>
       </m.div>
@@ -94,7 +94,7 @@ export default function SalaryTab() {
             <div className="flex items-end gap-3 leading-none mb-3">
               <span
                 className="font-display text-white"
-                style={{ fontSize: 'clamp(3.2rem,7.5vw,5.2rem)', fontWeight: 900, letterSpacing: '-0.05em', lineHeight: 1 }}
+                style={{ fontSize: 'clamp(2rem,7.5vw,5.2rem)', fontWeight: 900, letterSpacing: '-0.05em', lineHeight: 1 }}
               >
                 20–30
               </span>
@@ -111,7 +111,7 @@ export default function SalaryTab() {
             <div className="flex items-end gap-3 leading-none mb-3">
               <span
                 className="font-display gold-text"
-                style={{ fontSize: 'clamp(3.2rem,7.5vw,5.2rem)', fontWeight: 900, letterSpacing: '-0.05em', lineHeight: 1 }}
+                style={{ fontSize: 'clamp(2rem,7.5vw,5.2rem)', fontWeight: 900, letterSpacing: '-0.05em', lineHeight: 1 }}
               >
                 50–100
               </span>

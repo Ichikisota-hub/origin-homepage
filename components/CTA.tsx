@@ -34,12 +34,11 @@ export default function CTA() {
           </h2>
 
           {/* 日本語コピー: 明朝体×白 */}
-          <p className="font-mincho mb-6" style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', fontWeight: 700, color: 'rgba(255,255,255,0.92)', lineHeight: 1.4, letterSpacing: '0.04em' }}>
-            今、動くか。<br />一生同じままか。
+          <p className="font-mincho mb-6" style={{ fontSize: 'clamp(1.2rem, 3.5vw, 2.4rem)', fontWeight: 700, color: 'rgba(255,255,255,0.92)', lineHeight: 1.4, letterSpacing: '0.04em' }}>
+            今、動くか。<br className="hidden sm:block" />一生同じままか。
           </p>
-          <p className="font-mincho mb-14 mx-auto" style={{ fontSize: '17px', color: 'rgba(255,255,255,0.38)', lineHeight: 2.0, letterSpacing: '0.06em', maxWidth: '360px' }}>
-            3秒あれば、人生は動き出す。<br />
-            話を聞くだけでOK。まず一歩。
+          <p className="font-mincho mb-14 mx-auto" style={{ fontSize: '15px', color: 'rgba(255,255,255,0.38)', lineHeight: 2.0, letterSpacing: '0.04em', maxWidth: '360px' }}>
+            3秒あれば、人生は動き出す。話を聞くだけでOK。まず一歩。
           </p>
 
           {/* Primary CTA: 1個のみ（56px） */}

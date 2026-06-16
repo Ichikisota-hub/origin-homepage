@@ -18,7 +18,7 @@ export default function ServicesTab() {
         className="mb-14"
       >
         <span className="font-display text-[10px] font-bold tracking-[0.28em] text-[#c8a84b] block mb-4">WHAT WE DO</span>
-        <h2 className="font-mincho text-[#111]" style={{ fontSize: 'clamp(2rem,5vw,3.4rem)', fontWeight: 700, letterSpacing: '0.01em', lineHeight: 1.2 }}>
+        <h2 className="font-mincho text-[#111]" style={{ fontSize: 'clamp(1.4rem,5vw,3.4rem)', fontWeight: 700, letterSpacing: '0.01em', lineHeight: 1.2 }}>
           4つの事業
         </h2>
       </m.div>

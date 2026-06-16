@@ -43,7 +43,7 @@ export default function CareerTab() {
       {/* ヘッダー */}
       <m.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-16">
         <span className="font-display text-[10px] font-bold tracking-[0.28em] text-[#c8a84b] block mb-4">NEXT STEP</span>
-        <h2 className="font-mincho text-[#111]" style={{ fontSize: 'clamp(2rem,5vw,3.4rem)', fontWeight: 700, letterSpacing: '0.01em', lineHeight: 1.2 }}>
+        <h2 className="font-mincho text-[#111]" style={{ fontSize: 'clamp(1.4rem,5vw,3.4rem)', fontWeight: 700, letterSpacing: '0.01em', lineHeight: 1.2 }}>
           Kaikaは、通過点です。
         </h2>
         <p className="font-mincho text-[#666] mt-4" style={{ fontSize: '15px', letterSpacing: '0.04em' }}>

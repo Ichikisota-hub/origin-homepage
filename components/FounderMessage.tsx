@@ -45,7 +45,7 @@ export default function FounderMessage() {
           <blockquote>
             <p
               className="font-mincho text-[#111]"
-              style={{ fontSize: 'clamp(2.4rem, 5.5vw, 5rem)', fontWeight: 700, lineHeight: 1.3, letterSpacing: '0.02em' }}
+              style={{ fontSize: 'clamp(1.5rem, 5.5vw, 5rem)', fontWeight: 700, lineHeight: 1.35, letterSpacing: '0.02em' }}
             >
               {founder.quote}
             </p>
@@ -66,7 +66,7 @@ export default function FounderMessage() {
             {/* 本文: 明朝体で格調高く */}
             <div className="space-y-5 mb-10">
               {founder.message.split('\n\n').map((para, i) => (
-                <p key={i} className="font-mincho leading-[2.0]" style={{ color: '#555', fontSize: '17px', letterSpacing: '0.04em' }}>
+                <p key={i} className="font-mincho leading-[2.0]" style={{ color: '#555', fontSize: 'clamp(14px,4vw,17px)', letterSpacing: '0.04em' }}>
                   {para.split('\n').map((line, j) => (
                     <span key={j}>{line}{j < para.split('\n').length - 1 && <br />}</span>
                   ))}

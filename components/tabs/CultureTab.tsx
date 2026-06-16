@@ -45,8 +45,8 @@ export default function CultureTab() {
         className="mb-16"
       >
         <span className="font-display text-[10px] font-bold tracking-[0.28em] text-[#c8a84b] block mb-4">CULTURE</span>
-        <h2 className="font-mincho text-[#111]" style={{ fontSize: 'clamp(2rem,5vw,3.4rem)', fontWeight: 700, letterSpacing: '0.01em', lineHeight: 1.2 }}>
-          成果を出した人が、<br />最も享受する。
+        <h2 className="font-mincho text-[#111]" style={{ fontSize: 'clamp(1.4rem,5vw,3.4rem)', fontWeight: 700, letterSpacing: '0.01em', lineHeight: 1.2 }}>
+          成果を出した人が、<br className="hidden sm:block" />最も享受する。
         </h2>
         <p className="font-mincho text-[#666] mt-4" style={{ fontSize: '15px', letterSpacing: '0.04em', lineHeight: 1.8 }}>
           報酬も、体験も、結果に正直に分配されます。
