@@ -71,7 +71,7 @@ export default function CultureTab() {
             <h3 className="font-mincho text-[#111] mb-5" style={{ fontSize: '1.4rem', fontWeight: 700, letterSpacing: '0.02em' }}>{r.title}</h3>
             <ul className="space-y-2">
               {r.items.map((item, j) => (
-                <li key={j} className="font-mincho text-[#666]" style={{ fontSize: '13px', letterSpacing: '0.03em' }}>
+                <li key={j} className="text-[#666]" style={{ fontSize: '13px', letterSpacing: '0.03em' }}>
                   <span className="mr-2 text-[#c8a84b]">—</span>{item}
                 </li>
               ))}

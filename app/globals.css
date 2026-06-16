@@ -260,3 +260,14 @@ body {
 .nav-link-dark:hover { color: #fff; }
 .nav-login-dark { color: #555; transition: color 0.2s; }
 .nav-login-dark:hover { color: #999; }
+
+/* ── Mobile overrides ───────────────────── */
+@media (max-width: 639px) {
+  /* CTAボタンをモバイルでフル幅 */
+  .cta-primary, .cta-ghost, .cta-ghost-dark {
+    width: 100%;
+    justify-content: center;
+  }
+  /* ヒーローサブコピー */
+  .hero-subcopy { font-size: 16px !important; }
+}

@@ -95,21 +95,21 @@ export default function HeroSimple() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.0 }}
-          className="flex items-center flex-wrap gap-6 mb-12"
+          className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6 mb-12"
         >
           {PROOF.map((item, i) => (
-            <div key={i} className="flex items-center gap-6">
+            <div key={i} className="flex items-center gap-4 sm:gap-6">
               {i > 0 && (
-                <div style={{ width: '1px', height: '36px', background: '#222' }} />
+                <div className="hidden sm:block" style={{ width: '1px', height: '36px', background: '#222' }} />
               )}
               <div>
                 <div
                   className="font-display"
-                  style={{ fontSize: 'clamp(2rem,4vw,2.8rem)', fontWeight: 900, color: '#fff', letterSpacing: '-0.05em', lineHeight: 1 }}
+                  style={{ fontSize: 'clamp(1.8rem,4vw,2.8rem)', fontWeight: 900, color: '#fff', letterSpacing: '-0.05em', lineHeight: 1 }}
                 >
                   {item.num}
                 </div>
-                <div style={{ fontSize: '11px', color: '#444', marginTop: '6px', letterSpacing: '0.06em', fontFamily: 'var(--font-display, sans-serif)' }}>
+                <div style={{ fontSize: '11px', color: '#444', marginTop: '5px', letterSpacing: '0.06em', fontFamily: 'var(--font-display, sans-serif)' }}>
                   {item.label}
                 </div>
               </div>
@@ -122,7 +122,7 @@ export default function HeroSimple() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.2 }}
-          className="flex flex-wrap gap-3 items-center"
+          className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center"
         >
           <a
             href="https://lin.ee/YLQ7UHz"
@@ -130,8 +130,8 @@ export default function HeroSimple() {
             rel="noopener noreferrer"
             className="cta-primary"
             style={{
-              height: '56px',
-              padding: '0 36px',
+              height: '52px',
+              padding: '0 32px',
               fontSize: '15px',
               boxShadow: '0 8px 28px rgba(6,199,85,0.2)',
             }}
@@ -142,6 +142,7 @@ export default function HeroSimple() {
           <button
             onClick={() => window.dispatchEvent(new CustomEvent('open-scheduling-modal'))}
             className="cta-ghost-dark"
+            style={{ height: '52px' }}
           >
             説明会を予約する
             <ArrowRight className="w-4 h-4 flex-shrink-0" />

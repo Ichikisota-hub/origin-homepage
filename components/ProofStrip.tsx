@@ -38,8 +38,8 @@ export default function ProofStrip() {
           PROOF — 実績で証明する
         </m.p>
 
-        {/* Stats grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4">
+        {/* Stats grid — 1-col mobile / 2-col sm / 4-col lg */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {proofs.map((p, i) => (
             <m.div
               key={i}
@@ -47,11 +47,18 @@ export default function ProofStrip() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.55, delay: i * 0.1 }}
-              className="flex flex-col items-center justify-center text-center px-6 py-8"
-              style={{
-                borderRight: i < 3 ? '1px solid rgba(0,0,0,0.07)' : undefined,
-                borderBottom: i < 2 ? '1px solid rgba(0,0,0,0.07)' : undefined,
-              }}
+              className={[
+                'flex flex-col items-center justify-center text-center px-6 py-8',
+                // mobile: bottom border except last
+                i < 3 ? 'border-b border-black/7' : '',
+                // sm (2-col): right border for left col; bottom border for top row
+                i === 0 ? 'sm:border-r' : '',
+                i === 1 ? 'sm:border-r-0' : '',
+                i === 2 ? 'sm:border-b-0 sm:border-r' : '',
+                i === 3 ? 'sm:border-b-0 sm:border-r-0' : '',
+                // lg (4-col): right border for all except last; remove bottom
+                i < 3 ? 'lg:border-r lg:border-b-0' : 'lg:border-b-0',
+              ].filter(Boolean).join(' ')}
             >
               {p.num !== null ? (
                 /* 数値型 */

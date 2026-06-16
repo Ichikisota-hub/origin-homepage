@@ -70,9 +70,9 @@ export default function SalaryTab() {
             <mode.icon className={`w-7 h-7 ${mode.color} mb-4`} />
             <h3 className="font-mincho text-[#111] mb-1" style={{ fontSize: '1.2rem', fontWeight: 700 }}>{mode.label}</h3>
             <p className="font-display text-[10px] text-[#bbb] font-bold tracking-widest mb-4">{mode.sublabel}</p>
-            <p className={`font-mincho text-sm font-bold ${mode.color} mb-2`} style={{ letterSpacing: '0.02em' }}>{mode.desc}</p>
+            <p className={`text-sm font-bold ${mode.color} mb-2`} style={{ letterSpacing: '0.02em' }}>{mode.desc}</p>
             {mode.detail && (
-              <p className="font-mincho text-[#777] text-xs leading-relaxed" style={{ letterSpacing: '0.03em' }}>{mode.detail}</p>
+              <p className="text-[#777] text-xs leading-relaxed" style={{ letterSpacing: '0.03em' }}>{mode.detail}</p>
             )}
           </m.div>
         ))}

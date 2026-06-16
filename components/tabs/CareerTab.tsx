@@ -71,8 +71,8 @@ export default function CareerTab() {
               <span className="font-display text-[10px] font-black tracking-widest text-[#ccc]">{p.exit}</span>
             </div>
             <h3 className="font-mincho text-[#111] mb-3" style={{ fontSize: '1.3rem', fontWeight: 700, letterSpacing: '0.02em' }}>{p.label}</h3>
-            <p className="font-mincho mb-2" style={{ fontSize: '13px', fontWeight: 600, color: p.color, letterSpacing: '0.02em' }}>{p.desc}</p>
-            <p className="font-mincho text-[#888]" style={{ fontSize: '12px', lineHeight: 1.8, letterSpacing: '0.03em' }}>{p.detail}</p>
+            <p className="mb-2" style={{ fontSize: '13px', fontWeight: 600, color: p.color, letterSpacing: '0.02em' }}>{p.desc}</p>
+            <p className="text-[#888]" style={{ fontSize: '12px', lineHeight: 1.8, letterSpacing: '0.03em' }}>{p.detail}</p>
           </m.div>
         ))}
       </div>
@@ -103,7 +103,7 @@ export default function CareerTab() {
           ))}
         </div>
 
-        <p className="font-mincho text-[#444] text-xs mt-8 text-center" style={{ letterSpacing: '0.06em', lineHeight: 1.8 }}>
+        <p className="text-[#444] text-xs mt-8 text-center" style={{ letterSpacing: '0.06em', lineHeight: 1.8 }}>
           スキルも経験も不要です。「変わりたい」という気持ちだけ持ってきてください。
         </p>
       </m.div>

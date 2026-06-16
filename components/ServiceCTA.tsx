@@ -3,25 +3,31 @@ import { ArrowRight, MessageCircle } from 'lucide-react';
 
 export default function ServiceCTA() {
   return (
-    <div className="bg-white border border-gray-200 rounded-2xl p-7">
-      <p className="text-sm font-bold text-gray-900 mb-2">気になったら、まず話だけ聞きに来て。</p>
-      <p className="text-xs text-gray-700 mb-6">「興味がある」だけで十分。相談・エントリーどちらでもOK。</p>
+    <div className="border border-black/8 rounded-xl p-7" style={{ background: '#fff' }}>
+      <p className="font-mincho text-[#111] mb-2" style={{ fontSize: '15px', fontWeight: 700, letterSpacing: '0.03em' }}>
+        興味があれば、まず話を聞いてみてください。
+      </p>
+      <p className="font-mincho text-[#888] mb-6" style={{ fontSize: '13px', letterSpacing: '0.04em', lineHeight: 1.8 }}>
+        「興味がある」という気持ちだけで十分です。相談・エントリーどちらからでも受け付けています。
+      </p>
       <div className="flex flex-col sm:flex-row gap-3">
         <a
           href="https://lin.ee/YLQ7UHz"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 bg-[#06C755] text-white text-sm font-bold px-6 py-3 rounded-full hover:bg-[#05b04c] transition-colors"
+          className="cta-primary"
+          style={{ height: '48px', padding: '0 28px', fontSize: '14px' }}
         >
-          <MessageCircle className="w-4 h-4" />
+          <MessageCircle className="w-4 h-4 flex-shrink-0" />
           LINEで相談する
         </a>
         <button
           onClick={() => window.dispatchEvent(new CustomEvent('open-scheduling-modal'))}
-          className="flex items-center justify-center gap-2 bg-gray-900 text-white text-sm font-bold px-6 py-3 rounded-full hover:bg-gray-700 transition-colors"
+          className="cta-ghost"
+          style={{ height: '48px', padding: '0 24px', fontSize: '14px' }}
         >
           説明会を予約する
-          <ArrowRight className="w-4 h-4" />
+          <ArrowRight className="w-4 h-4 flex-shrink-0" />
         </button>
       </div>
     </div>
