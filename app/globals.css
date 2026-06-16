@@ -46,7 +46,7 @@ body {
 
 .t-hero {
   font-family: var(--font-display, sans-serif);
-  font-size: clamp(40px, 11vw, 120px);
+  font-size: clamp(30px, 9vw, 120px);
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 0.92;
