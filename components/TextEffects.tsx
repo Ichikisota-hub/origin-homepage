@@ -138,10 +138,17 @@ const MARQUEE_ITEMS = [
   '行動力', 'AMBITION', '突破', 'TRANSFORM',
 ];
 
-export function MarqueeBand() {
+export function MarqueeBand({ dark = false }: { dark?: boolean }) {
   const tripled = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS, ...MARQUEE_ITEMS];
   return (
-    <div className="relative overflow-hidden border-y border-gray-200 py-[14px] bg-white select-none">
+    <div
+      className="relative overflow-hidden py-[18px] select-none"
+      style={{
+        background: dark ? '#111' : '#fafaf8',
+        borderTop: dark ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(0,0,0,0.07)',
+        borderBottom: dark ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(0,0,0,0.07)',
+      }}
+    >
       <m.div
         animate={{ x: ['0%', '-33.333%'] }}
         transition={{ duration: 28, repeat: Infinity, ease: 'linear' }}
@@ -150,10 +157,11 @@ export function MarqueeBand() {
         {tripled.map((item, i) => (
           <span
             key={i}
-            className="inline-flex items-center gap-8 px-4 text-[11px] font-bold tracking-[0.28em] text-gray-700"
+            className="font-display inline-flex items-center gap-8 px-4 text-[11px] font-bold tracking-[0.28em]"
+            style={{ color: dark ? 'rgba(255,255,255,0.55)' : '#555' }}
           >
             {item}
-            <span className="text-gray-200 text-[8px]">✦</span>
+            <span className="text-[8px]" style={{ color: '#c8a84b' }}>✦</span>
           </span>
         ))}
       </m.div>

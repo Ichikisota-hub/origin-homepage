@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { m, AnimatePresence } from 'motion/react';
+import { useLenis } from 'lenis/react';
 import ServicesTab from './tabs/ServicesTab';
 import SalaryTab from './tabs/SalaryTab';
 import CultureTab from './tabs/CultureTab';
@@ -30,18 +31,23 @@ const tabContent: Record<string, React.ReactNode> = {
 
 export default function TabPage() {
   const [active, setActive] = useState('services');
+  const lenis = useLenis();
   useEffect(() => {
     const apply = () => {
       const hash = window.location.hash.slice(1);
       if (hash && hashMap[hash]) {
         setActive(hashMap[hash]);
-        setTimeout(() => document.getElementById('tabs')?.scrollIntoView({ behavior:'smooth', block:'start' }), 50);
+        // Lenis 経由で滑らかに着地（ネイティブ scrollIntoView は慣性下で即ジャンプになるため）
+        setTimeout(() => {
+          if (lenis) lenis.scrollTo('#tabs', { offset: -56 });
+          else document.getElementById('tabs')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 50);
       }
     };
     apply();
     window.addEventListener('hashchange', apply);
     return () => window.removeEventListener('hashchange', apply);
-  }, []);
+  }, [lenis]);
 
   return (
     <section id="tabs" className="bg-[#fafaf8]">

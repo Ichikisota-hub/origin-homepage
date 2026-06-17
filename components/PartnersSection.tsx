@@ -119,7 +119,7 @@ export default function PartnersSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: i * 0.07 }}
               >
-                <div className="bg-white border border-gray-200 rounded-2xl h-full">
+                <div className="bg-white border border-gray-200 rounded-2xl h-full transition-all duration-300 hover:border-[#c8a84b]/40 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)]">
                   {inner}
                 </div>
               </m.div>

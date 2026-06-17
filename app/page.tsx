@@ -8,6 +8,7 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import SchedulingModal from "@/components/SchedulingModal";
 import FloatingCTA from "@/components/FloatingCTA";
+import { MarqueeBand } from "@/components/TextEffects";
 
 export default function Home() {
   return (
@@ -18,7 +19,9 @@ export default function Home() {
         <ProofStrip />
         <FounderMessage />
         <PartnersSection />
+        <MarqueeBand />
         <TabPage />
+        <MarqueeBand dark />
         <CTA />
       </main>
       <Footer />

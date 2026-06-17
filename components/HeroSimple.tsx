@@ -1,6 +1,7 @@
 'use client';
 import { m } from 'motion/react';
 import { MessageCircle, ArrowRight } from 'lucide-react';
+import CountUp from './CountUp';
 
 /*
   HERO — ダーク・プレミアム設計
@@ -12,9 +13,9 @@ import { MessageCircle, ArrowRight } from 'lucide-react';
 */
 
 const PROOF = [
-  { num: '25+',    label: 'アクティブメンバー' },
-  { num: '¥100万+', label: '月間売上'          },
-  { num: '3ヶ月',  label: 'で急成長中'         },
+  { to: 25,  prefix: '',  suffix: '+',   label: 'アクティブメンバー' },
+  { to: 100, prefix: '¥', suffix: '万+', label: '月間売上'          },
+  { to: 3,   prefix: '',  suffix: 'ヶ月', label: 'で急成長中'         },
 ] as const;
 
 export default function HeroSimple() {
@@ -64,20 +65,28 @@ export default function HeroSimple() {
           </span>
         </m.div>
 
-        {/* ヘッドライン — paddingTopでクリップ防止 */}
-        <div className="overflow-hidden mb-6" style={{ paddingTop: '0.12em' }}>
-          <m.h1
-            initial={{ y: '110%' }}
-            animate={{ y: '0%' }}
-            transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-            className="t-hero font-mincho"
-            style={{ color: '#fff', lineHeight: 1.2, fontWeight: 700 }}
-          >
-            可能性を<br />
-            <span className="gold-text font-display" style={{ fontStyle: 'italic', letterSpacing: '-0.02em' }}>kaika</span>させる、<br />
-            場所とキッカケを。
-          </m.h1>
-        </div>
+        {/* ヘッドライン — 行ごとマスクリビール（各行 overflow-hidden で下から立ち上がる） */}
+        <h1 className="t-hero font-mincho mb-6" style={{ color: '#fff', lineHeight: 1.2, fontWeight: 700 }}>
+          {/* 各行を overflow-hidden で包み、paddingTopで明朝の上端クリップを防ぐ */}
+          <span className="block overflow-hidden" style={{ paddingTop: '0.12em' }}>
+            <m.span className="block" initial={{ y: '110%' }} animate={{ y: '0%' }}
+              transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}>
+              可能性を
+            </m.span>
+          </span>
+          <span className="block overflow-hidden" style={{ paddingTop: '0.12em' }}>
+            <m.span className="block" initial={{ y: '110%' }} animate={{ y: '0%' }}
+              transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.32 }}>
+              <span className="gold-text font-display" style={{ fontStyle: 'italic', letterSpacing: '-0.02em' }}>kaika</span>させる、
+            </m.span>
+          </span>
+          <span className="block overflow-hidden" style={{ paddingTop: '0.12em' }}>
+            <m.span className="block" initial={{ y: '110%' }} animate={{ y: '0%' }}
+              transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.44 }}>
+              場所とキッカケを。
+            </m.span>
+          </span>
+        </h1>
 
         {/* サブコピー */}
         <m.p
@@ -104,12 +113,13 @@ export default function HeroSimple() {
                 <div className="hidden sm:block" style={{ width: '1px', height: '36px', background: '#222' }} />
               )}
               <div>
-                <div
-                  className="font-display"
+                <CountUp
+                  to={item.to}
+                  prefix={item.prefix}
+                  suffix={item.suffix}
+                  className="font-display block"
                   style={{ fontSize: 'clamp(1.8rem,4vw,2.8rem)', fontWeight: 900, color: '#fff', letterSpacing: '-0.05em', lineHeight: 1 }}
-                >
-                  {item.num}
-                </div>
+                />
                 <div style={{ fontSize: '11px', color: '#444', marginTop: '5px', letterSpacing: '0.06em', fontFamily: 'var(--font-display, sans-serif)' }}>
                   {item.label}
                 </div>

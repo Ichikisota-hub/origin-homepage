@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowLeft, Camera, Megaphone, Home, Bot, Globe } from 'lucide-react';
 import { getService, services } from '@/lib/services';
 import ServiceCTA from '@/components/ServiceCTA';
+import Reveal from '@/components/Reveal';
 import type { Metadata } from 'next';
 
 const icons = { origin: Megaphone, 'real-estate': Home, ai: Bot, global: Globe } as const;
@@ -100,15 +101,17 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <div className="lg:col-span-3">
 
             {/* 事業説明 */}
-            <p
-              className="font-mincho text-[#444] mb-12"
-              style={{ fontSize: '16px', lineHeight: 2.0, letterSpacing: '0.04em' }}
-            >
-              {service.description}
-            </p>
+            <Reveal>
+              <p
+                className="font-mincho text-[#444] mb-12"
+                style={{ fontSize: '16px', lineHeight: 2.0, letterSpacing: '0.04em' }}
+              >
+                {service.description}
+              </p>
+            </Reveal>
 
             {/* WHAT YOU DO */}
-            <div className="mb-12">
+            <Reveal delay={0.08} className="mb-12">
               <span className="font-display block mb-6" style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.28em', color: '#c8a84b' }}>
                 WHAT YOU DO
               </span>
@@ -144,7 +147,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   );
                 })}
               </ul>
-            </div>
+            </Reveal>
 
             {/* ServiceCTA（モバイル時はここに表示） */}
             <div className="lg:hidden">
@@ -156,7 +159,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <div className="lg:col-span-2 space-y-8">
 
             {/* 詳細テーブル */}
-            <div>
+            <Reveal>
               <span className="font-display block mb-4" style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.28em', color: '#c8a84b' }}>
                 DETAILS
               </span>
@@ -176,10 +179,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   </div>
                 ))}
               </div>
-            </div>
+            </Reveal>
 
             {/* 担当者 */}
-            <div>
+            <Reveal delay={0.08}>
               <span className="font-display block mb-4" style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.28em', color: '#c8a84b' }}>
                 REPRESENTATIVE
               </span>
@@ -219,7 +222,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
 
             {/* CTA（デスクトップ） */}
             <div className="hidden lg:block">

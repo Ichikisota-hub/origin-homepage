@@ -1,5 +1,6 @@
 'use client';
 import { m } from 'motion/react';
+import CountUp from './CountUp';
 
 /*
   PROOF STRIP — リデザイン
@@ -9,10 +10,10 @@ import { m } from 'motion/react';
 */
 
 const proofs = [
-  { num: '20〜100', unit: '万円/月', label: 'メンバーの収入レンジ',      sub: null },
-  { num: '4',       unit: '事業',    label: '営業・不動産・AI・海外',     sub: null },
-  { num: '19',      unit: '歳',      label: '代表が月120万を達成した年齢', sub: null },
-  { num: null,      unit: null,      label: '学部・学年・経験\n一切問いません', sub: '未経験 OK' },
+  { num: '20〜100', countPrefix: '20〜', countTo: 100, unit: '万円/月', label: 'メンバーの収入レンジ',      sub: null },
+  { num: '4',       countPrefix: '',     countTo: 4,   unit: '事業',    label: '営業・不動産・AI・海外',     sub: null },
+  { num: '19',      countPrefix: '',     countTo: 19,  unit: '歳',      label: '代表が月120万を達成した年齢', sub: null },
+  { num: null,      countPrefix: '',     countTo: 0,   unit: null,      label: '学部・学年・経験\n一切問いません', sub: '未経験 OK' },
 ] as const;
 
 export default function ProofStrip() {
@@ -63,12 +64,12 @@ export default function ProofStrip() {
               {p.num !== null ? (
                 /* 数値型 */
                 <div className="mb-3">
-                  <span
+                  <CountUp
+                    to={p.countTo}
+                    prefix={p.countPrefix}
                     className="font-display text-[#111]"
                     style={{ fontSize: 'clamp(1.4rem,4.5vw,3.4rem)', fontWeight: 900, letterSpacing: '-0.05em', lineHeight: 1 }}
-                  >
-                    {p.num}
-                  </span>
+                  />
                   <span
                     className="font-display text-[#c8a84b] ml-1.5"
                     style={{ fontSize: 'clamp(0.75rem,1.8vw,1.1rem)', fontWeight: 700, letterSpacing: '-0.01em' }}

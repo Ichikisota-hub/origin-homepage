@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Onest } from "next/font/google";
 import Providers from "./providers";
+import SmoothScroll from "@/components/SmoothScroll";
+import ScrollProgress from "@/components/ScrollProgress";
 import "./globals.css";
 
 /* Onest: 幾何学的・クリーン。数字・英語ラベル専用 */
@@ -40,7 +42,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
       </head>
       <body className="min-h-screen bg-[#fafaf8] text-[#111] antialiased selection:bg-amber-100 selection:text-amber-900">
-        <Providers>{children}</Providers>
+        <Providers>
+          <ScrollProgress />
+          <SmoothScroll>{children}</SmoothScroll>
+        </Providers>
       </body>
     </html>
   );

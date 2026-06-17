@@ -34,7 +34,7 @@ export default function ServicesTab() {
           >
             <Link
               href={`/services/${service.slug}`}
-              className="group flex items-center gap-6 md:gap-10 bg-white border border-black/7 rounded-xl px-6 py-5 md:px-8 md:py-6 hover:border-[#c8a84b]/50 transition-all duration-300"
+              className="group flex items-center gap-6 md:gap-10 bg-white border border-black/7 rounded-xl px-6 py-5 md:px-8 md:py-6 hover:border-[#c8a84b]/50 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] transition-all duration-300"
             >
               {/* 番号 */}
               <span
@@ -67,7 +67,7 @@ export default function ServicesTab() {
               </div>
 
               <ArrowUpRight
-                className="w-5 h-5 flex-shrink-0 transition-colors duration-300"
+                className="w-5 h-5 flex-shrink-0 transition-all duration-300 group-hover:text-[#c8a84b] group-hover:translate-x-1 group-hover:-translate-y-1"
                 style={{ color: '#ddd' }}
               />
             </Link>
