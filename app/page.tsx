@@ -18,11 +18,11 @@ export default function Home() {
         <HeroSimple />
         <ProofStrip />
         <FounderMessage />
-        <PartnersSection />
         <MarqueeBand />
         <TabPage />
         <MarqueeBand dark />
         <CTA />
+        <PartnersSection />
       </main>
       <Footer />
       <SchedulingModal />

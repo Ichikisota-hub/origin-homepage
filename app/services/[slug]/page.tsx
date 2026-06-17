@@ -41,15 +41,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <div className="relative overflow-hidden" style={{ background: '#0a0a0a' }}>
         {/* グリッド背景 */}
         <div className="absolute inset-0 hero-grid pointer-events-none" />
-        {/* アンビエントグロー */}
+        {/* 事業カラーで漂うグロー（A=事業色 / B=ブランドゴールド） */}
         <div
-          className="absolute pointer-events-none"
-          style={{
-            top: '50%', left: '30%',
-            width: '500px', height: '500px',
-            transform: 'translate(-50%,-50%)',
-            background: `radial-gradient(circle, ${service.glow} 0%, transparent 65%)`,
-          }}
+          className="drift-glow svc-glow-a"
+          style={{ background: `radial-gradient(circle, ${service.glow} 0%, transparent 60%)` }}
+        />
+        <div
+          className="drift-glow svc-glow-b"
+          style={{ background: 'radial-gradient(circle, rgba(200,168,75,0.12) 0%, transparent 62%)' }}
         />
         {/* ゴールドライン */}
         <div className="absolute top-0 inset-x-0 gold-line" />
@@ -93,8 +92,13 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </div>
       </div>
 
-      {/* ── ボディ ── */}
-      <div className="s-container py-16 md:py-24">
+      {/* ── ボディ（上部に事業カラーの薄い滲み） ── */}
+      <div className="relative overflow-hidden" style={{ background: '#fafaf8' }}>
+        <div
+          className="absolute inset-x-0 top-0 h-[420px] pointer-events-none"
+          style={{ background: `radial-gradient(ellipse 70% 100% at 50% 0%, ${service.glow} 0%, transparent 75%)` }}
+        />
+        <div className="s-container py-16 md:py-24 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
 
           {/* LEFT: 概要・ポイント（3/5） */}
@@ -229,6 +233,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <ServiceCTA />
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
